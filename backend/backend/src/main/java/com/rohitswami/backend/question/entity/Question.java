@@ -1,4 +1,5 @@
 package com.rohitswami.backend.question.entity;
+import com.rohitswami.backend.common.entity.BaseEntity;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -13,7 +14,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "questions")
-public class Question {
+public class Question extends BaseEntity {
 
     @Id
     private String id;
@@ -24,7 +25,6 @@ public class Question {
 
     private List<String> options;
 
-    private String correctAnswer;
+    private Integer correctOptionIndex;
 
-    private LocalDateTime createdAt;
 }

@@ -29,8 +29,6 @@ public class QuizServiceImpl implements QuizService {
                 .duration(request.getDuration())
                 .active(true)
                 .createdBy(createdBy)
-                .createdAt(LocalDateTime.now())
-                .updatedAt(LocalDateTime.now())
                 .build();
 
         Quiz savedQuiz = quizRepository.save(quiz);

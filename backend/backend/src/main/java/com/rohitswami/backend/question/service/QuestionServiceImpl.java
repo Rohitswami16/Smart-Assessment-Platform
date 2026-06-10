@@ -25,8 +25,6 @@ public class QuestionServiceImpl implements QuestionService {
                 .quizId(request.getQuizId())
                 .questionText(request.getQuestionText())
                 .options(request.getOptions())
-                .correctAnswer(request.getCorrectAnswer())
-                .createdAt(LocalDateTime.now())
                 .build();
 
         Question savedQuestion = questionRepository.save(question);

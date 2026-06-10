@@ -1,0 +1,25 @@
+package com.rohitswami.backend.common.entity;
+
+import java.time.LocalDateTime;
+
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.event.AuditingEntityCallback;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public abstract class BaseEntity {
+
+    @CreatedDate
+    @Field("created_at")
+    private LocalDateTime createdAt;
+
+    @LastModifiedDate
+    @Field("updated_at")
+    private LocalDateTime updatedAt;
+
+}

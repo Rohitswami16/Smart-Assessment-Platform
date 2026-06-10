@@ -1,9 +1,10 @@
-package com.rohitswami.backend.quiz.entity;
+package com.rohitswami.backend.result.entity;
 
 import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 import com.rohitswami.backend.common.entity.BaseEntity;
 
 import lombok.*;
@@ -12,20 +13,19 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "quizzes")
-public class Quiz extends BaseEntity {
+@Document(collection = "results")
+public class Result extends BaseEntity {
 
     @Id
     private String id;
 
-    private String title;
+    private String quizId;
 
-    private String description;
+    private String studentEmail;
 
-    private Integer duration;
+    private Integer score;
 
-    private Boolean active;
+    private Integer totalQuestions;
 
-    private String createdBy;
-
+    private LocalDateTime submittedAt;
 }

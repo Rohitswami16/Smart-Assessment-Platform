@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import com.rohitswami.backend.question.dto.CreateQuestionRequest;
 import com.rohitswami.backend.question.dto.QuestionResponse;
 import com.rohitswami.backend.question.service.QuestionService;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +21,7 @@ public class QuestionController {
 
     private final QuestionService questionService;
 
+    @PreAuthorize("hasRole('TEACHER')")
     @PostMapping
     public ResponseEntity<QuestionResponse> addQuestion(
             @Valid @RequestBody CreateQuestionRequest request) {

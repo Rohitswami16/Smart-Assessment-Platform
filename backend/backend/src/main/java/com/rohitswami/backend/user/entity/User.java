@@ -1,4 +1,5 @@
 package com.rohitswami.backend.user.entity;
+import com.rohitswami.backend.common.entity.BaseEntity;
 
 import java.time.LocalDateTime;
 
@@ -15,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class User extends BaseEntity {
 
     @Id
     private String id;
@@ -30,7 +31,4 @@ public class User {
 
     private Role role;
 
-    private LocalDateTime createdAt;
-
-    private LocalDateTime updatedAt;
 }
